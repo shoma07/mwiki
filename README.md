@@ -1,28 +1,39 @@
 # Mwiki
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/mwiki`. To experiment with that code, run `bin/console` for an interactive prompt.
+Search from any MediaWiki.
 
-TODO: Delete this and the text above, and describe your gem
+The default host is ja.wikipedia.org.
+
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-```ruby
-gem 'mwiki'
+```sh
+$ gem install mwiki
 ```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install mwiki
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+$ mwiki <word>
+```
+
+By default, words searched once are cached in `$HOME/.mwiki`.
+
+If you do not want to use cached results, specify the following options:
+
+```
+$ mwiki --no-cache <word>
+```
+
+To change the host, specify the following options:
+
+```
+$ mwiki --host=<media wiki host> <word>
+```
+
+*This command allows only https.*
 
 ## Development
 

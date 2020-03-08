@@ -1,4 +1,4 @@
-$LOAD_PATH.unshift File.expand_path("../lib", __dir__)
-require "mwiki"
+$LOAD_PATH.unshift File.expand_path('../lib', __dir__)
+require 'mwiki'
 
-require "minitest/autorun"
+require 'minitest/autorun'

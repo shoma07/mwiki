@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'mwiki/version'
 require 'mwiki/cli'
 
