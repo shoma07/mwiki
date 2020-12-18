@@ -9,14 +9,20 @@ The default host is ja.wikipedia.org.
 
 Add this line to your application's Gemfile:
 
+```ruby
+gem 'mwiki', git: 'https://github.com/shoma07/mwiki.git', branch: 'master'
+```
+
+And then execute:
+
 ```sh
-$ gem install mwiki
+$ bundle
 ```
 
 ## Usage
 
 ```
-$ mwiki <word>
+$ bundle exec mwiki <word>
 ```
 
 By default, words searched once are cached in `$HOME/.mwiki`.
