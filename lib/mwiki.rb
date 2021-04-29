@@ -9,6 +9,6 @@ require 'mwiki/client'
 require 'mwiki/cli'
 
 module Mwiki
+  # Mwiki::Error
   class Error < StandardError; end
-  # Your code goes here...
 end
