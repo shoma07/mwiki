@@ -8,6 +8,6 @@ gemspec
 gem 'rake'
 gem 'rubocop'
 gem 'rubocop-rake'
-gem 'yard'
 gem 'sord'
 gem 'steep'
+gem 'yard'
