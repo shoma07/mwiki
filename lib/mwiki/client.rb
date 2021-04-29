@@ -7,8 +7,8 @@ module Mwiki
     # @param [String] word
     # @return [void]
     def initialize(host, word)
-      @host = host
-      @word = word
+      self.host = host
+      self.word = word
     end
 
     # @return [String]
@@ -26,6 +26,14 @@ module Mwiki
 
     private
 
+    # @!attribute [rw] host
+    # @return [String]
+    attr_accessor :host
+
+    # @!attribute [rw] word
+    # @return [String]
+    attr_accessor :word
+
     # @return [Hash, NilClass]
     def fetch_pages
       JSON.parse(Net::HTTP.get_response(uri).body).dig('query', 'pages')
@@ -33,7 +41,7 @@ module Mwiki
 
     # @return [URI]
     def uri
-      URI.parse("https://#{@host}/w/api.php?#{URI.encode_www_form(params)}")
+      URI.parse("https://#{host}/w/api.php?#{URI.encode_www_form(params)}")
     end
 
     # @return [Hash]
@@ -45,7 +53,7 @@ module Mwiki
         explaintext: nil,
         exsectionformat: 'wiki',
         redirects: nil,
-        titles: @word
+        titles: word
       }
     end
   end

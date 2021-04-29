@@ -3,7 +3,9 @@
 module Mwiki
   # Mwiki::Cache
   class Cache
+    # @return [String]
     DIR = "#{ENV.fetch('HOME')}/.mwiki"
+    private_constant :DIR
 
     class << self
       # @return [void]
@@ -15,7 +17,7 @@ module Mwiki
     # @param [String] word
     # @return [void]
     def initialize(word)
-      @word = word
+      self.word = word
     end
 
     # @return [String, NilClass]
@@ -32,6 +34,10 @@ module Mwiki
 
     private
 
+    # @!attribute [rw] word
+    # @return [String]
+    attr_accessor :word
+
     # @return [TrueClass, FalseClass]
     def exist?
       File.exist?(file)
@@ -39,7 +45,7 @@ module Mwiki
 
     # @return [String]
     def file
-      "#{DIR}/#{@word}.txt"
+      "#{DIR}/#{word}.txt"
     end
   end
 end

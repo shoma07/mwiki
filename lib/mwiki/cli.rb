@@ -4,13 +4,13 @@ module Mwiki
   # Mwiki::CLI
   class CLI
     # @param argv [Array]
-    # @return [Mwiki::CLI]
+    # @return [void]
     def initialize(argv = [])
       Cache.create_directory
-      @option = { host: 'ja.wikipedia.org', cache: true }
+      self.option = { host: 'ja.wikipedia.org', cache: true }
       parser.parse!(argv)
-      @word = argv.shift
-      raise Error, 'Please specify a word' if @word == ''
+      self.word = argv.shift
+      raise Error, 'Please specify a word' if word == ''
     end
 
     # @return [void]
@@ -20,20 +20,28 @@ module Mwiki
 
     private
 
+    # @!attribute [rw] option
+    # @return [Hash]
+    attr_accessor :option
+
+    # @!attribute [rw] word
+    # @return [String]
+    attr_accessor :word
+
     # @return [String]
     def content
-      cache = Cache.new(@word)
-      (@option[:cache] && cache.content) ||
-        cache.write(Client.new(@option[:host], @word).content)
+      cache = Cache.new(word)
+      (option[:cache] && cache.content) ||
+        cache.write(Client.new(option[:host], word).content)
     end
 
     # @return [OptionParser]
     def parser
       opt = OptionParser.new
-      opt.on('--host=VAL', String, "mediawiki host, default: #{@option[:host]}") do |v|
-        @option[:host] = v
+      opt.on('--host=VAL', String, "mediawiki host, default: #{option[:host]}") do |v|
+        option[:host] = v
       end
-      opt.on('--[no-]cache', TrueClass, "use cache, default: #{@option[:cache]}") do |v|
+      opt.on('--[no-]cache', TrueClass, "use cache, default: #{option[:cache]}") do |v|
         option[:cache] = v
       end
       opt

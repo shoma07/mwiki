@@ -25,8 +25,11 @@ GEM
       unicode-display_width (>= 1.4.0, < 3.0)
     rubocop-ast (1.4.1)
       parser (>= 2.7.1.5)
+    rubocop-rake (0.5.1)
+      rubocop
     ruby-progressbar (1.11.0)
     unicode-display_width (2.0.0)
+    yard (0.9.26)
 
 PLATFORMS
   ruby
@@ -35,6 +38,8 @@ DEPENDENCIES
   mwiki!
   rake
   rubocop
+  rubocop-rake
+  yard
 
 BUNDLED WITH
    2.2.15

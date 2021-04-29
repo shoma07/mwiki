@@ -5,14 +5,14 @@ require_relative 'lib/mwiki/version'
 Gem::Specification.new do |spec|
   spec.name          = 'mwiki'
   spec.version       = Mwiki::VERSION
-  spec.authors       = ['shoma07']
-  spec.email         = ['shoma.oha@gmail.com']
+  spec.authors       = %w[shoma07]
+  spec.email         = %w[23730734+shoma07@users.noreply.github.com]
 
   spec.summary       = 'media wiki search command line tool'
   spec.description   = 'media wiki search command line tool'
   spec.homepage      = 'https://github.com/shoma07/mwiki'
   spec.license       = 'MIT'
-  spec.required_ruby_version = Gem::Requirement.new('>= 2.4.0')
+  spec.required_ruby_version = Gem::Requirement.new('>= 2.5.0')
 
   spec.metadata['homepage_uri'] = spec.homepage
   spec.metadata['source_code_uri'] = spec.homepage
