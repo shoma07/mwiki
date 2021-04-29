@@ -1,0 +1,65 @@
+module Mwiki
+  VERSION: untyped
+
+  # Mwiki::Error
+  class Error < StandardError
+  end
+
+  # Mwiki::CLI
+  class CLI
+    # _@param_ `argv`
+    def initialize: (?::Array[String] argv) -> void
+
+    def execute: () -> void
+
+    def content: () -> String
+
+    def parser: () -> OptionParser
+
+    attr_accessor option: ::Hash[untyped, untyped]
+
+    attr_accessor word: String
+  end
+
+  # Mwiki::Cache
+  class Cache
+    DIR: untyped
+
+    def self.create_directory: () -> void
+
+    # _@param_ `word`
+    def initialize: (String word) -> void
+
+    def content: () -> (String | NilClass)
+
+    # _@param_ `content`
+    def write: (String content) -> String
+
+    def exist?: () -> (TrueClass | FalseClass)
+
+    def file: () -> String
+
+    attr_accessor word: String
+  end
+
+  # Mwiki::Client
+  class Client
+    # _@param_ `host`
+    # 
+    # _@param_ `word`
+    def initialize: (String host, String word) -> void
+
+    def content: () -> String
+
+    def fetch_pages: () -> (::Hash[untyped, untyped] | NilClass)
+
+    # sord warn - URI wasn't able to be resolved to a constant in this project
+    def uri: () -> URI
+
+    def params: () -> ::Hash[untyped, untyped]
+
+    attr_accessor host: String
+
+    attr_accessor word: String
+  end
+end
