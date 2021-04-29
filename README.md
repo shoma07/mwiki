@@ -10,7 +10,7 @@ The default host is ja.wikipedia.org.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'mwiki', git: 'https://github.com/shoma07/mwiki.git', branch: 'master'
+gem 'mwiki', git: 'https://github.com/shoma07/mwiki.git', branch: 'main'
 ```
 
 And then execute:
